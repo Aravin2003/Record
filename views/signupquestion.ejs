@@ -1,0 +1,28 @@
+<%-include("partials/head")%>
+<title>Record</title>
+<link rel="stylesheet"  href="/css/signup.css">
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</head>
+<body>
+     <a href="/"><h1 id="title">Record</h1></a>
+<p id="tagline">Anything.Anywhere.</p>
+<div id="signup-signin-box">
+<lottie-player src="https://assets7.lottiefiles.com/packages/lf20_vjxfqggs.json"
+background="transparent"  speed="1"   id="questionlottie"
+style="width: 200px; height: 100px;"  loop autoplay></lottie-player>
+  <p id="securityquestionexplain">Set a security question and an answer for a more &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;secure experience.</p>
+  <form>
+    <br>
+    <br>
+    <input type="text" id="signupquestion" placeholder="Set a question" name="signupquestion" required>
+    <br>
+    <br>
+    <input type="text" id="signupanswer" placeholder="Set an answer" name="signupanswer" required>
+    <br>
+    <br>
+    <a><button id="signupquestionbutton">Set</button></a>
+  </form>
+</div>
+<script src="js/register.js"></script>
+</body>
+</html>

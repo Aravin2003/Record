@@ -1,170 +1,99 @@
- <%-include("partials/head")%>
-    <title>Home</title>
-    <link rel="stylesheet"  href="css/style.css">
-    </head>
-    <body>
+<%-include("partials/head")%>
+<title>Record</title>
+<link rel="stylesheet"  href="css/home.css">
+</head>
+<body>
 
-        <nav id="header">
-            <button id="login">Login</button>
-            <button id="signup">Sign up</button>
-            <h1><span class="websitenamefirstletter">R</span>ecord</h1>
-        </nav>
+    <nav id="header">
+        <a href="/login"><button id="login">Login</button></a>
+        <h1><span class="websitenamefirstletter">R</span>ecord</h1>
+    </nav>
 
-       <div id="homeview">
-            <button id="moon"><span id="nightmode"class="material-symbols-outlined">
-                bedtime
-                </span></button>
+   <div id="homeview">
+        <button id="moon"><span id="nightmode"class="material-symbols-outlined">
+            bedtime
+            </span></button>
 
-        <div class="imgdiv">
-            <img src="https://images.immediate.co.uk/production/volatile/sites/30/2017/01/Bananas-218094b-scaled.jpg" alt="Banana!!">
-        </div>
-        <div id="post">
-        
-        </div>
+    <div class="imgdiv">
+        <img src="https://images.immediate.co.uk/production/volatile/sites/30/2017/01/Bananas-218094b-scaled.jpg" alt="Banana!!">
+    </div>
+    <div id="post">
+    
+    </div>
 
-
-        <dialog id="loginmodal" class="loginmodal">
-            <i class="material-symbols-outlined" id="closemodal">
-                close
+    <div id="postupdown">
+        <span id="thumbsupspan" class="thumbsup">
+            <i class="material-symbols-outlined" id="thumbsup">
+                thumb_up
             </i>
-            <p class="welcomeModal">Welcome Back!</p>
-            <div class="loginformdiv">
-            <form class="loginform">
-                <label for="emaillogin" class="emaillogin">Email/Username</label>
-                <input type="text" id="emaillogin">
-                <label for="passwordlogin" class="passwordlogin">Password</label>
-                <input type="password" id="passwordlogin">
-            </form>
-            <div class="login-submit">
-                <button id="loginformsubmit">Submit</button>
-                <p class="forgotpassword"><a>Forgot Password?</a></p>
-                <p class="signupinlogin">Don't have an account?<br><a id="loginsignup">Sign-up now!</a></p>
-            </div>
-            </div>
-            <div class="anonymouslogin">
-            <p>Or want to stay anonymous?<br>Done. </p>
-            <i class="material-symbols-outlined" id="modaleye">
-                visibility_off
+        </span>
+        <h6>69</h6>
+        <span id="thumbsdownspan" class="thumbsdown">
+            <i class="material-symbols-outlined" id="thumbsdown">
+                thumb_down
             </i>
-            <button class="modalgo" id="modalgo">Go</button>
-            </div>
-        </dialog>
-
-
-        <dialog  id="signupmodal" class="signupmodal">
-        <div>
-            <i class="material-symbols-outlined" id="closemodalsignup">
-                close
-            </i>
-            <p class="signupnow">Sign-Up Now!</p>
-            <div class="signupformdiv">
-                <label for="emailsignup" class="emailsignup">Email</label>
-                <br>
-                <input type="text" id="emailsignup" class="signupformwidth">
-                <br>
-                <br>
-                <label for="usernamesignup" class="usernamesignup">Username</label>
-                <br>
-                <input type="text" id="usernamesignup" class="signupformwidth">
-                <br>
-                <br>
-                <label for="emailsignup" class="emailsignup">Set a question for added security</label>
-                <br>
-                <input type="text" id="questionsignup" class="signupformwidth">
-                <br>
-                <br>
-                <label for="questionsignup" class="questionsignup">Set an answer for the question</label>
-                <br>
-                <input type="text" id="answersignup" class="signupformwidth">
-                <br>
-                <br>
-                <label for="answersignup" class="answersignup">Password</label>
-                <br>
-                <input type="password" id="passwordsignup" class="signupformwidth">
-            </div>
-            <button id="createaccount" class="createaccount">Create Account</button>
-            <p class="signuplogin">Already have an account?<br><a id="signuplogin">Login</a></p>
-            <div class="signuppageone">
-            </div>
-            <div class="signuppagetwo">
-            </div>
+        </span>
+        <h6>69</h6>
+    </div>
+    <div id="options">
+        <i class="material-symbols-outlined" id="rightslide">
+            add
+        </i>
+    </div>
+    <div id="homebuttons">
+    <button class="gen" id="discover">Discover</button>
+    <button id="upload">Upload</button>
+    <p id="h2trans">Comments</p>
+    <a href="#yourcomm" id="anchortagcancel"><button class="thread" id="disp">View Thread</button></a>
+    <a href="#homeview"><button class="backtop" id="backtop">Back Top</button></a>
+   </div>
+    <div id="box">
+      <div id="commactual" class="comments">
+        <div id="commall">
+            <h3 id="h3"> 6969 Comments</h3>
+            <a href="#yourcomm"><button id="addComment">Add comment</button></a>
+            <a href="#homeview" id="cancelidcommall"><button id="cancel">Cancel</button></a>
         </div>
-        </dialog>
-
-
-        <div id="postupdown">
-            <span id="thumbsupspan" class="thumbsup">
-                <i class="material-symbols-outlined" id="thumbsup">
-                    thumb_up
-                </i>
-            </span>
-            <h6>69</h6>
-            <span id="thumbsdownspan" class="thumbsdown">
-                <i class="material-symbols-outlined" id="thumbsdown">
-                    thumb_down
-                </i>
-            </span>
-            <h6>69</h6>
+        <div class="allinp" id="yourcomm">
+            <div>
+                <form>
+                    <textarea placeholder="Add a comment.." rows="50" cols="25" class="comm"></textarea>
+                </form>
+            </div>
+            <button class="butt" id="yourcommcancel">Cancel</button>
+            <button class="butt">Submit</button>
         </div>
-        <div id="options">
-            <i class="material-symbols-outlined" id="rightslide">
-                add
-            </i>
+      </div>
+    </div>
+    <div id="justcomm" class="comments">
+        <div id="indivcomm">
+            <img class="userprof" src="https://images.immediate.co.uk/production/volatile/sites/30/2017/01/Bananas-218094b-scaled.jpg">
+            <span class="usern">Username</span>
+            <p class="content">These selectors will select all the input elements in the document. If you need to specify any selectors, you’ll need to add classes to the elements.</p>
+            <span id="reply" class="reply">Reply</span>
+            <span class="dislikediv"><i class="material-symbols-outlined like" id="like">
+                favorite
+            </i></span>
         </div>
-        <div id="homebuttons">
-        <button class="gen" id="discover">Discover</button>
-        <button id="upload">Upload</button>
-        <p id="h2trans">Comments</p>
-        <a href="#yourcomm" id="anchortagcancel"><button class="thread" id="disp">View Thread</button></a>
-        <a href="#homeview"><button class="backtop" id="backtop">Back Top</button></a>
-       </div>
-        <div id="box">
-          <div id="commactual" class="comments">
-            <div id="commall">
-                <h3 id="h3"> 6969 Comments</h3>
-                <a href="#yourcomm"><button id="addComment">Add comment</button></a>
-                <a href="#homeview" id="cancelidcommall"><button id="cancel">Cancel</button></a>
-            </div>
-            <div class="allinp" id="yourcomm">
-                <div>
-                    <form>
-                        <textarea placeholder="Add a comment.." rows="50" cols="25" class="comm"></textarea>
-                    </form>
-                </div>
-                <button class="butt" id="yourcommcancel">Cancel</button>
-                <button class="butt">Submit</button>
-            </div>
-          </div>
+        <div id="indivcomm">
+            <img class="userprof" src="https://images.immediate.co.uk/production/volatile/sites/30/2017/01/Bananas-218094b-scaled.jpg">
+            <span class="usern">Username</span>
+            <p class="content">These selectors will select all the input elements in the document. If you need to specify any selectors, you’ll need to add classes to the elements.</p>
+            <span id="reply" class="reply">Reply</span>
+            <span class="dislikediv"><i class="material-symbols-outlined like" id="like">
+                favorite
+            </i></span>
         </div>
-        <div id="justcomm" class="comments">
-            <div id="indivcomm">
-                <img class="userprof" src="https://images.immediate.co.uk/production/volatile/sites/30/2017/01/Bananas-218094b-scaled.jpg">
-                <span class="usern">Username</span>
-                <p class="content">These selectors will select all the input elements in the document. If you need to specify any selectors, you’ll need to add classes to the elements.</p>
-                <span id="reply" class="reply">Reply</span>
-                <span class="dislikediv"><i class="material-symbols-outlined like" id="like">
-                    favorite
-                </i></span>
-            </div>
-            <div id="indivcomm">
-                <img class="userprof" src="https://images.immediate.co.uk/production/volatile/sites/30/2017/01/Bananas-218094b-scaled.jpg">
-                <span class="usern">Username</span>
-                <p class="content">These selectors will select all the input elements in the document. If you need to specify any selectors, you’ll need to add classes to the elements.</p>
-                <span id="reply" class="reply">Reply</span>
-                <span class="dislikediv"><i class="material-symbols-outlined like" id="like">
-                    favorite
-                </i></span>
-            </div>
-            <div id="indivcomm">
-                <img class="userprof" src="https://images.immediate.co.uk/production/volatile/sites/30/2017/01/Bananas-218094b-scaled.jpg">
-                <span class="usern">Username</span>
-                <p class="content">These selectors will select all the input elements in the document. If you need to specify any selectors, you’ll need to add classes to the elements.</p>
-                <span id="reply" class="reply">Reply</span>
-                <span class="dislikediv"><i class="material-symbols-outlined like" id="like">
-                    favorite
-                </i></span>
-            </div>
+        <div id="indivcomm">
+            <img class="userprof" src="https://images.immediate.co.uk/production/volatile/sites/30/2017/01/Bananas-218094b-scaled.jpg">
+            <span class="usern">Username</span>
+            <p class="content">These selectors will select all the input elements in the document. If you need to specify any selectors, you’ll need to add classes to the elements.</p>
+            <span id="reply" class="reply">Reply</span>
+            <span class="dislikediv"><i class="material-symbols-outlined like" id="like">
+                favorite
+            </i></span>
         </div>
-        <script src="js/commdrop.js"></script>
-    </body>
+    </div>
+    <script src="js/home.js"></script>
+</body>
 </html>

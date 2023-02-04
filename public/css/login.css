@@ -1,0 +1,174 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+a:link { text-decoration: none; }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+   background-color: #DCE2E5;
+   font-family: 'Poppins', sans-serif;
+   height:100vh;
+   background-color: #5471ee;
+   background-image: linear-gradient(60deg, #5471ee 0%, #e82126 46%, #494847 100%);
+
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+h1{
+   color:black;
+   position: relative;
+   text-align: center;
+   top:0.5em;
+   font-size: 4.5em;
+   font-weight: bold;
+}
+
+#tagline
+{
+    position:relative;
+   text-align: center;
+    top:3.5em;
+    font-weight: bold;
+    font-size: medium;
+}
+#signup-signin-box
+{
+width: 30em;
+height: 25em;
+box-shadow: 0px 0px 20px black;
+position:absolute;
+top:32%;
+left:32%;
+border-radius:1em;
+background: white;
+text-align: center;
+}
+#login
+{
+ padding: 0.8em 5em;
+ border: 2px solid black;
+ font-weight: bold;
+ font-size: medium;
+ background-color:white;
+ border-radius: 0.4em;
+ position:relative;
+ color:black;
+ left:1.1px;
+ margin-top: 0.5em;
+ box-shadow: 0px 0px 5px black;
+}
+
+#signup
+{
+ padding: 0.8em 5em;
+ border: 2px solid black;
+ font-weight: bold;
+ font-size: medium;
+ background-color:black;
+ border-radius: 0.4em;
+ position:relative;
+ color:white;
+ left:1.1px;
+ margin-top: 0.5em;
+}
+#signup:hover{
+    cursor:pointer;
+}
+#logincap
+{
+    color: red;
+}
+h1:hover{
+    cursor:pointer;
+}
+#loginformdiv
+{
+    margin-top:3em;
+}
+#usernamelogin{
+    padding:15px 60px;
+    font-weight: 500;
+    font-size: medium;
+    border: 0px solid black;
+    border-radius: 0.5em;
+    box-shadow: 0px 2px 5px black;
+}
+#passwordlogin
+{
+    padding:15px 60px;
+    font-weight: 500;
+    font-size: medium;
+    border: 0px solid black;
+    border-radius: 0.5em;
+    box-shadow: 0px 2px 5px black;
+}
+#signupcheckboxdiv
+{
+    position:relative;
+    left:5em;
+    width:10em;
+}
+.checkboxlabel:hover
+{
+   cursor:pointer;
+}
+#loginformbutton
+{
+    margin-top:3em;
+    padding:3px 9px;
+    font-size: medium;
+    font-weight: bold;
+    border-radius: 1em;
+    z-index: 2;
+    transition: padding 800ms;
+}
+#loginformbutton:hover{
+    color:white;
+    background:linear-gradient(45deg,rgb(245, 6, 6),rgb(24, 24, 239));
+    cursor:pointer;
+    transition: padding 800ms,background-color 1000ms,color 600ms,box-shadow 100ms;
+    box-shadow: 2px 2px 8px black;
+}
+#forgotpasswordloginform
+{
+    margin-top:1.5em;
+    color:#5471ee;
+}
+#forgotpasswordloginform:hover
+{
+    cursor:pointer;
+}

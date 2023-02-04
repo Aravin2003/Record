@@ -1,0 +1,30 @@
+<%-include("partials/head")%>
+<title>Record</title>
+<link rel="stylesheet"  href="css/login.css">
+</head>
+<body>
+<a href="/"><h1 id="title">Record</h1></a>
+<p id="tagline">Anything.Anywhere.</p>
+<div id="signup-signin-box">
+    <a href="/login"><button id="login">Login</button></a>
+    <a href="/signup"><button id="signup">Signup</button></a>
+    <div id="loginformdiv">
+        <form method="post" action="/login">
+            <input type="text" id="usernamelogin" placeholder="Username" name="username" required>
+            <br>
+            <br>
+            <input type="password" id="passwordlogin" placeholder="Password" name="password" required>
+            <br>
+            <br>
+            <div id="signupcheckboxdiv">
+                <input type="checkbox"  id="signupcheckbox">
+                <label for="signupcheckbox" class="checkboxlabel">Show Password</label>
+            </div>
+            <button id="loginformbutton" >Login</button>
+            <a><p id="forgotpasswordloginform">Forgot Password?</p></a>
+        </form>
+    </div>
+</div>
+<script src="js/register.js"></script>
+</body>
+</html>

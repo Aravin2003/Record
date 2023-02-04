@@ -1,3 +1,4 @@
+
 const button=document.getElementById("disp");
 const justcomm=document.getElementById("justcomm");
 const allcomm=document.getElementById("box");
@@ -155,68 +156,4 @@ discover.addEventListener("mouseenter",()=>
 {
     discover.style.backgroundColor="white";
 });
-const login=document.getElementById("login");
-const loginmodal=document.getElementById("loginmodal");
-const closemodal=document.getElementById("closemodal");
-const modalgo=document.getElementById("modalgo");
-login.addEventListener("click",()=>
-{
-    loginmodal.showModal();
-});
-closemodal.addEventListener("click",()=>
-{
-    loginmodal.close();
-});
-modalgo.addEventListener("click",()=>
-{
-    loginmodal.close();
-});
-const signup=document.getElementById("signup");
-const signupmodal=document.getElementById("signupmodal");
-const loginsignup=document.getElementById("loginsignup");
-loginsignup.addEventListener("click",()=>
-{
-    loginmodal.close();
-    signupmodal.showModal();
-})
-signup.addEventListener("click",()=>
-{
-    signupmodal.showModal();
-})
-const closemodalsignup=document.getElementById("closemodalsignup");
-closemodalsignup.addEventListener("click",()=>
-{
-    signupmodal.close();
-})
-const signuplogin=document.getElementById("signuplogin");
-signuplogin.addEventListener("click",()=>
-{
-    signupmodal.close();
-    loginmodal.showModal();
-})
 
-
-const optionsforscroll=
-{
-    rootMargin:"0px",
-    threshold:0.5
-};
-const observer=new IntersectionObserver(scrollInstersect,optionsforscroll);
-likes.forEach(x=>
-    {
-        observer.observe(x);
-    })
-function scrollInstersect(entries,observer)
-{
-  entries.forEach(entry=>
-    {
-      if(!entry.isIntersecting)
-      {
-        
-      }
-      else if(entry.isIntersecting)
-      {
-       
-      }
-    })
-}

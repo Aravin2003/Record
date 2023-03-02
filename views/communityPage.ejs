@@ -1,0 +1,46 @@
+<%-include("partials/head")%>
+<title>Record</title>
+<link rel="stylesheet"  href="/css/home.css">
+</head>
+<body>
+    <nav id="header">
+        <% if(!currentUser){ %>
+            <a href="/login"><button class="login">Login</button></a> 
+            <% }else {%>
+                <a href="/logout"><button class="login" id="logout">Logout</button></a>
+                 <% } %>
+                 <a href="/"><h1><span class="websitenamefirstletter">R</span>ecord</h1></a>
+    </nav>
+    <%if(success&&success.length){%>
+        <div id="success-flash">
+           <% if(currentUser){ %>
+            <p id="success-flash-message"> <%=success%></p>
+            <% } else { %>
+                <p id="success-flash-message"> <%=success%></p>
+                <% } %>
+           <span class="material-symbols-outlined" id="flash-close">
+            close
+           </span>
+        </div>
+        <%}%>
+    <div id="community-banner"></div>
+    <div id="community-profile"></div>
+    <div id="community-header">
+        <h2 id="community-header-name"><%=Currentcommunity.communityname %></h2>
+    </div>
+    <div id="create-a-post">
+
+    </div>
+    <div id="community-readme">
+        <div id="community-page-about-div">
+            <h2 id="community-page-about">About</h2>
+            <p><%=Currentcommunity.communitydescription%></p>
+        </div>
+        <h3 id="readme-date"> Created on:<%=Currentcommunity.date%></h3>
+        <div id="readme-moderators-div">
+            <h2 id="readme-moderators">Moderators</h2>
+        </div>
+    </div>
+    <script src="js/home.js"></script>
+</body>
+</html>

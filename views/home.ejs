@@ -3,97 +3,57 @@
 <link rel="stylesheet"  href="css/home.css">
 </head>
 <body>
-
     <nav id="header">
-        <a href="/login"><button id="login">Login</button></a>
-        <h1><span class="websitenamefirstletter">R</span>ecord</h1>
+        <% if(!currentUser){ %>
+            <a href="/login"><button class="login">Login</button></a> 
+            <% }else {%>
+                <details>
+                    <summary id="nav-profile"><%=currentUser.username %></summary>
+                    <details-menu role="menu">
+                     <div id="nav-drop-down">
+                        <a href="/logout"><button class="login" id="logout">Logout</button></a>
+                     </div>
+                    </details-menu>
+                  </details>
+                 <% } %>
+        <a href="/"><h1><span class="websitenamefirstletter">R</span>ecord</h1></a>
     </nav>
-
-   <div id="homeview">
-        <button id="moon"><span id="nightmode"class="material-symbols-outlined">
-            bedtime
-            </span></button>
-
-    <div class="imgdiv">
-        <img src="https://images.immediate.co.uk/production/volatile/sites/30/2017/01/Bananas-218094b-scaled.jpg" alt="Banana!!">
-    </div>
-    <div id="post">
-    
-    </div>
-
-    <div id="postupdown">
-        <span id="thumbsupspan" class="thumbsup">
-            <i class="material-symbols-outlined" id="thumbsup">
-                thumb_up
-            </i>
-        </span>
-        <h6>69</h6>
-        <span id="thumbsdownspan" class="thumbsdown">
-            <i class="material-symbols-outlined" id="thumbsdown">
-                thumb_down
-            </i>
-        </span>
-        <h6>69</h6>
-    </div>
-    <div id="options">
-        <i class="material-symbols-outlined" id="rightslide">
-            add
-        </i>
-    </div>
-    <div id="homebuttons">
-    <button class="gen" id="discover">Discover</button>
-    <button id="upload">Upload</button>
-    <p id="h2trans">Comments</p>
-    <a href="#yourcomm" id="anchortagcancel"><button class="thread" id="disp">View Thread</button></a>
-    <a href="#homeview"><button class="backtop" id="backtop">Back Top</button></a>
-   </div>
-    <div id="box">
-      <div id="commactual" class="comments">
-        <div id="commall">
-            <h3 id="h3"> 6969 Comments</h3>
-            <a href="#yourcomm"><button id="addComment">Add comment</button></a>
-            <a href="#homeview" id="cancelidcommall"><button id="cancel">Cancel</button></a>
+    <%if(success&&success.length){%>
+        <div id="success-flash">
+           <% if(currentUser){ %>
+            <p id="success-flash-message"> <%=success%><%=currentUser.username%>!</p>
+            <% } else { %>
+                <p id="success-flash-message"> <%=success%></p>
+                <% } %>
+           <span class="material-symbols-outlined" id="flash-close">
+            close
+           </span>
         </div>
-        <div class="allinp" id="yourcomm">
-            <div>
-                <form>
-                    <textarea placeholder="Add a comment.." rows="50" cols="25" class="comm"></textarea>
-                </form>
-            </div>
-            <button class="butt" id="yourcommcancel">Cancel</button>
-            <button class="butt">Submit</button>
+        <%}%>
+       <div id="search-container">
+        <form action="/" method="get">
+            <input type="text" name="search" placeholder="Search..." id="home-search">
+            <span class="material-symbols-outlined" id="search-icon">
+                search
+                </span>
+          </form>
+       </div>
+       <a href="communityCreate"> <button id="community-create"><span class="material-symbols-outlined" id="add-community">
+        add
+        </span>Create Community</button></a>
+     <div id="community-container">
+        <div id="user-communities">
+            <h5 class="home-h5-community">Your communities</h5>
         </div>
-      </div>
-    </div>
-    <div id="justcomm" class="comments">
-        <div id="indivcomm">
-            <img class="userprof" src="https://images.immediate.co.uk/production/volatile/sites/30/2017/01/Bananas-218094b-scaled.jpg">
-            <span class="usern">Username</span>
-            <p class="content">These selectors will select all the input elements in the document. If you need to specify any selectors, you’ll need to add classes to the elements.</p>
-            <span id="reply" class="reply">Reply</span>
-            <span class="dislikediv"><i class="material-symbols-outlined like" id="like">
-                favorite
-            </i></span>
+        <div id="user-recently-viewed">
+            <h5 class="home-h5-community">Recently viewed</h5>
         </div>
-        <div id="indivcomm">
-            <img class="userprof" src="https://images.immediate.co.uk/production/volatile/sites/30/2017/01/Bananas-218094b-scaled.jpg">
-            <span class="usern">Username</span>
-            <p class="content">These selectors will select all the input elements in the document. If you need to specify any selectors, you’ll need to add classes to the elements.</p>
-            <span id="reply" class="reply">Reply</span>
-            <span class="dislikediv"><i class="material-symbols-outlined like" id="like">
-                favorite
-            </i></span>
-        </div>
-        <div id="indivcomm">
-            <img class="userprof" src="https://images.immediate.co.uk/production/volatile/sites/30/2017/01/Bananas-218094b-scaled.jpg">
-            <span class="usern">Username</span>
-            <p class="content">These selectors will select all the input elements in the document. If you need to specify any selectors, you’ll need to add classes to the elements.</p>
-            <span id="reply" class="reply">Reply</span>
-            <span class="dislikediv"><i class="material-symbols-outlined like" id="like">
-                favorite
-            </i></span>
-        </div>
-    </div>
+     </div>
+     <div id="post-container">
+     </div>
+     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<lottie-player class="loading-animation" id="loading-animation" src="https://assets7.lottiefiles.com/packages/lf20_hppwydw1.json"  background="transparent" 
+ speed="1"  style="width: 500px; height: 100px;"  loop  autoplay></lottie-player>
     <script src="js/home.js"></script>
 </body>
 </html>

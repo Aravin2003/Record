@@ -7,9 +7,17 @@ const userschema= new mongoose.Schema(
           type: String,
           required:true,
           unique:true
+        },
+        signupquestion:
+        {
+         type: String,
+        },
+        signupanswer:
+        {
+         type: String,
         }
-        
     }
 );
 userschema.plugin(passportLocalMongoose);
 module.exports=mongoose.model('User',userschema);
+

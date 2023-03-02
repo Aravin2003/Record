@@ -1,3 +1,8 @@
+
+if (process.env.NODE_ENV !== "production") {
+    require('dotenv').config();
+}
+const helmet=require("helmet");
 const express=require("express");
 const path=require("path");
 const session=require('express-session');
@@ -7,12 +12,20 @@ const passport = require('passport');
 const localstrategy=require('passport-local');
 const user=require('./models/User');
 const bodyParser = require("body-parser");
-mongoose.connect('mongodb://localhost:27017/Recordjk');
-
+const MongoStore = require('connect-mongo');
+const mongoSanitize = require("express-mongo-sanitize");
+const dbUrl=process.env.DB_URL;
+mongoose.connect(dbUrl);
 const sessionConfig={
+    name: "RecordkaSession",
+    //secure:true,
     secret:"Nothingfornow",
     resave: false,
     saveUninitialized: true,
+    store: MongoStore.create({
+        mongoUrl: dbUrl,
+        touchAfter: 24 * 3600 
+      }),
     cookie:{
         httpOnly:true,
         expires:Date.now()+1000*60*60*24*7,
@@ -20,6 +33,8 @@ const sessionConfig={
     }
 };
 const app=express();
+//app.use(helmet({ contentSecurityPolicy:false}));
+app.use(mongoSanitize());
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -35,15 +50,24 @@ passport.use(new localstrategy(user.authenticate()));
 passport.serializeUser(user.serializeUser());
 passport.deserializeUser(user.deserializeUser());
 
+app.use((req,res,next)=>
+{
+  res.locals.currentUser=req.user;
+  res.locals.success=req.flash('success');
+  res.locals.error=req.flash('error');
+  next();
+});
+const communityRoutes=require('./routes/communityRoutes');
+app.use('/c/',communityRoutes);
 const userRoutes=require('./routes/userRoutes');
 app.use('/',userRoutes);
 
-app.get("/",(req,res)=>
+app.get("/",async(req,res)=>
 {
     res.render("home.ejs");
 })
 
-app.listen(6969,()=>
+app.listen(1000,()=>
 {
    console.log("Listening!!"); 
 })

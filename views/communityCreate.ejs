@@ -1,0 +1,25 @@
+<%-include("partials/head")%>
+<title>Record</title>
+<link rel="stylesheet"  href="css/home.css">
+</head>
+<body>
+    <nav id="header">
+        <% if(!currentUser){ %>
+            <a href="/login"><button class="login">Login</button></a> 
+            <% }else {%>
+                <a href="/logout"><button id="login">Logout</button></a>
+                 <% } %>
+                 <a href="/"><h1><span class="websitenamefirstletter">R</span>ecord</h1></a>
+    </nav>
+    <div id="community-create-details">
+    <form action="/communityCreate" method="post">
+        <h2 class="h2-community">Name</h2>
+        <input type="text" id="community-name" placeholder="Name" name="communityName" maxlength="21" required>
+    <h2 class="h2-community" id="create-about-community">About</h2>
+    <textarea id="community-about" name="communityDescription" rows="8" cols="50"></textarea>
+    <button id="create-community-button">Create</button>
+    </form>
+    </div>
+    <script src="js/home.js"></script>
+</body>
+</html>

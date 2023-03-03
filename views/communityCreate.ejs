@@ -7,7 +7,14 @@
         <% if(!currentUser){ %>
             <a href="/login"><button class="login">Login</button></a> 
             <% }else {%>
-                <a href="/logout"><button id="login">Logout</button></a>
+                <details>
+                    <summary id="nav-profile"><%=currentUser.username %></summary>
+                    <details-menu role="menu">
+                     <div id="nav-drop-down">
+                        <a href="/logout"><button class="login" id="logout">Logout</button></a>
+                     </div>
+                    </details-menu>
+                  </details>
                  <% } %>
                  <a href="/"><h1><span class="websitenamefirstletter">R</span>ecord</h1></a>
     </nav>

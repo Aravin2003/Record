@@ -26,15 +26,8 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-    background: hsla(177, 79%, 65%, 1);
-
-background: linear-gradient(45deg, hsla(177, 79%, 65%, 1) 0%, hsla(84, 82%, 73%, 1) 100%);
-
-background: -moz-linear-gradient(45deg, hsla(177, 79%, 65%, 1) 0%, hsla(84, 82%, 73%, 1) 100%);
-
-background: -webkit-linear-gradient(45deg, hsla(177, 79%, 65%, 1) 0%, hsla(84, 82%, 73%, 1) 100%);
-
-filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#5EECE5", endColorstr="#C6F383", GradientType=1 );
+    background: rgb(244,204,209);
+    background: linear-gradient(45deg, rgba(244,204,209,1) 0%, rgba(161,203,246,1) 100%);
    font-family: 'Poppins', sans-serif;
    height: 100vh;
 }
@@ -54,7 +47,9 @@ table {
 	border-spacing: 0;
 }
 h1{
-   color:black;
+    background: -webkit-linear-gradient(45deg,rgb(245, 6, 6),rgb(24, 24, 239));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
    position: relative;
    text-align: center;
    top:0.5em;

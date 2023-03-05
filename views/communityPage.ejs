@@ -3,21 +3,7 @@
 <link rel="stylesheet"  href="/css/home.css">
 </head>
 <body>
-    <nav id="header">
-        <% if(!currentUser){ %>
-            <a href="/login"><button class="login">Login</button></a> 
-            <% }else {%>
-                <details>
-                    <summary id="nav-profile"><%=currentUser.username %></summary>
-                    <details-menu role="menu">
-                     <div id="nav-drop-down">
-                        <a href="/logout"><button class="login" id="logout">Logout</button></a>
-                     </div>
-                    </details-menu>
-                  </details>
-                 <% } %>
-                 <a href="/"><h1><span class="websitenamefirstletter">R</span>ecord</h1></a>
-    </nav>
+    <%-include("partials/nav")%>
     <%if(success&&success.length){%>
         <div id="success-flash">
            <% if(currentUser){ %>
@@ -34,20 +20,26 @@
     <div id="community-profile"></div>
     <div id="community-header">
         <h2 id="community-header-name"><%=Currentcommunity.communityname %></h2>
+        <button id="community-inclusive-status">Joined</button>
+        <div id="community-online-numbers">
+            <p>Members : <span class="gradient-font">0</span></p>
+            <hr>
+            <p>Online : <span class="gradient-font">0</span></p>
+        </div>
     </div>
     <div id="create-a-post">
 
     </div>
     <div id="community-readme">
         <div id="community-page-about-div">
-            <h2 id="community-page-about">About</h2>
-            <p><%=Currentcommunity.communitydescription%></p>
+            <h2 id="community-page-about" class="gradient-font">About</h2>
+            <p id = community-description><%=Currentcommunity.communitydescription%></p>
         </div>
         <h3 id="readme-date"> Created on:<%=Currentcommunity.date%></h3>
         <div id="readme-moderators-div">
-            <h2 id="readme-moderators">Moderators</h2>
+            <h2 id="readme-moderators" class="gradient-font">Moderators</h2>
         </div>
     </div>
-    <script src="js/home.js"></script>
+    <script src="/js/communityPage.js"></script>
 </body>
 </html>

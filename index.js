@@ -66,7 +66,7 @@ app.get("/",async(req,res)=>
 {
     res.render("home.ejs");
 })
-app.listen(10000,()=>
+app.listen(3000,()=>
 {
    console.log("Listening!!"); 
 })

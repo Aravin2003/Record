@@ -1,0 +1,7 @@
+body{
+    background: rgb(244,204,209);
+    background: linear-gradient(45deg, rgba(244,204,209,1) 0%, rgba(161,203,246,1) 100%);
+}
+::placeholder{
+    color:#aba9a9;
+}

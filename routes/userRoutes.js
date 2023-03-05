@@ -50,8 +50,7 @@ router.get('/signup',(req,res)=>
 });
 router.get('/signup/continue',async(req,res)=>
 {
-    const currentuser=await User.findById(req.session.userId).exec();
-    res.render('../views/signupcontinue.ejs',{ currentuser: currentuser});
+    res.render('../views/signupcontinue.ejs',{ currentuser:req.user});
 });
 router.get('/signup/questions',(req,res)=>
 {
@@ -60,7 +59,7 @@ router.get('/signup/questions',(req,res)=>
 router.post('/signup/questions',async(req,res)=>
 {
    const{signupquestion,signupanswer}=req.body;
-   const currentuser= req.session.userId;
+   const currentuser= req.user;
    await User.updateOne({_id:currentuser},{signupquestion:signupquestion,signupanswer:signupanswer});
    res.redirect('/');
 });
@@ -75,7 +74,6 @@ router.post('/signup',async(req,res,next)=>
         if(err)
         return next(err);
         res.redirect('/signup/continue');
-        req.session.userId=newUser._id;
     });
     }
     catch(e)
@@ -86,7 +84,6 @@ router.post('/signup',async(req,res,next)=>
 });
 router.post('/login',passport.authenticate('local',{failureRedirect:'/login'}),async(req,res)=>
 {
-    req.session.userId=req.user._id;
   req.flash('success',"Welcome Back,");
   res.redirect('/');
 });

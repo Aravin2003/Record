@@ -27,15 +27,7 @@ body {
     font-family: 'Poppins', sans-serif;
 	line-height: 1;
     height:100vh;
-    background: hsla(177, 79%, 65%, 1);
-
-background: linear-gradient(45deg, hsla(177, 79%, 65%, 1) 0%, hsla(84, 82%, 73%, 1) 100%);
-
-background: -moz-linear-gradient(45deg, hsla(177, 79%, 65%, 1) 0%, hsla(84, 82%, 73%, 1) 100%);
-
-background: -webkit-linear-gradient(45deg, hsla(177, 79%, 65%, 1) 0%, hsla(84, 82%, 73%, 1) 100%);
-
-filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#5EECE5", endColorstr="#C6F383", GradientType=1 );
+    background-color:#cbddf9 ;
     background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -57,25 +49,26 @@ table {
 
 .login
 {
-    padding: 6px 24px;
-    border-radius: 10px;
+    padding: 6px 20px;
+    border-radius: 50px;
     height:40px;
     font-family: 'Poppins', sans-serif;
     color:black;
     position:absolute;
-    left:83em;
-    bottom:1.3em;
+    right:1em;
+    bottom:0.85em;
     z-index: 2;
     transition: padding 800ms;
 }
 .login:hover
 {
     color:white;
-    background:linear-gradient(45deg,rgb(245, 6, 6),rgb(24, 24, 239));
+    background: rgb(244,98,69);
+background: linear-gradient(45deg, rgba(244,98,69,1) 7%, rgba(100,32,246,1) 100%);
     cursor:pointer;
-    padding:6px 18px;
+    padding:6px 16px;
     transition: padding 800ms,background-color 1000ms,color 600ms,box-shadow 100ms;
-    box-shadow: 2px 2px 8px black;
+    box-shadow: 2px 2px 8px grey;
 }
 #header
 {
@@ -87,22 +80,19 @@ table {
     width:100%;
     padding:0;
     margin:0;
-    height:12.3%;
+    height:10%;
     z-index: 3;
-    background-color:black;
+    background-color: white;
+    border-bottom: 0.5px solid black;
+    box-shadow: inset 0 -10px 10px -10px #c0c2c6;
 }
-.websitenamefirstletter
-{
-    color:red;
-}
+
 h1{
     position:absolute;
-    color: white;
-    left:15.5em;
-    top:0.6em;
+    left:0.5em;
+    top:0.2em;
     font-size: 2.3em;
     font-weight: bold;
-    font-family: 'Poppins', sans-serif;
 }
 body
 {
@@ -121,7 +111,12 @@ body
 html{
     scroll-behavior: smooth;
 }
-
+.gradient-font
+{
+  background: -webkit-linear-gradient(45deg,rgb(245, 6, 6),rgb(24, 24, 239));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 #success-flash
 {
  text-align: center;
@@ -156,34 +151,45 @@ html{
 {
     cursor:pointer;
 }
+#your-space
+{
+  background-color: white;
+  border:2px solid black;
+  height:20vh;
+  position:absolute;
+  border-radius:4px;
+  width:55%;
+  left:27%;
+  top:6em;
+}
 #user-communities
 {
     background-color: white;
-    border:2px solid black;
+    border:1.5px solid black;
     width:45vh;
     height:60vh;
     position:absolute;
     left:1.5em;
-    top:15em;
+    top:6em;
     border-radius: 10px;
     box-shadow: 1px 1px 5px black;
 }
 #user-recently-viewed
 {
     background-color: white;
-    border:2px solid black;
+    border:1.5px solid black;
     width:45vh;
     height:60vh;
     position:absolute;
     left:1.5em;
-    top:39em;
+    top:30em;
     border-radius: 10px;
     box-shadow: 1px 1px 5px black;
 }
 #post-container
 {
-    position:relative;
-    top:12.5em;
+    position:absolute;
+    top:14.5em;
     width:55%;
     left:27%;
     display: flex;
@@ -192,7 +198,7 @@ html{
 .post
 {
     background-color: white;
-    border:2px solid black;
+    border:1px solid black;
     height: 55vh;
     width: calc((100%) - 16px);
     margin: 8px;
@@ -216,19 +222,66 @@ html{
     align-items: center;
     justify-content: center;
     box-shadow: 1px 1px 5px black;
+  }
+  #your-space-explain
+  {
+    font-size: small;
+    position: absolute;
+    bottom:1em;
+    left:0.5em;
+
+  }
+#your-space-explain-div
+{
+  border-right:1px solid black;
+  height:18vh;
+  position:absolute;
+  width:64%;
+  left:2%;
+  top:0.5em;
+  box-shadow: inset -10px 0 4px -10px rgba(0, 0, 0, 0.5);
+}
+#your-space-name
+{
+  font-family: 'Satisfy', cursive;
+  font-size: x-large;
+  position: absolute;
+  left:0.5em;
+  top:0.5em;
+}
+#post-create
+{
+  position:absolute;
+  bottom:1em;
+  padding: 6px 42px;
+  padding-bottom: 10px;
+  padding-top: 0;
+  left:70%;
+  border-radius: 10px;
+  font-weight: bold;
+  color:white;
+  background-color: #0162c7 ;
+}
+#post-create:hover
+{
+  color:black;
+    background-color: white;
+    cursor:pointer;
+    transition: background-color 600ms,box-shadow 100ms;
+    box-shadow: 2px 2px 8px black;
 }
   #community-create
   {
-    border: 2px solid black;
-    position:relative;
-    top:13em;
-    padding: 8px 24px;
-    padding-bottom: 20px;
-    left:4.5em;
+    position:absolute;
+    top:1em;
+    padding: 6px 20px;
+    padding-bottom: 10px;
+    padding-top: 0;
+    left:70%;
     border-radius: 10px;
     font-weight: bold;
     color:white;
-    background-color: black ;
+    background-color: #0162c7 ;
   }
   #add-community
   {
@@ -256,16 +309,7 @@ html{
     border-radius: 10px;
     box-shadow: 1px 1px 5px black;
   }
-  .h2-community
-  {
-    color:white;
-    background-color: black ;
-    width:20%;
-    text-align: center;
-    margin-top:2em;
-    margin-left: 1em;
-    border-radius: 10px;
- }
+
  #create-about-community
  {
     position:absolute;
@@ -275,7 +319,7 @@ html{
  {
     position:absolute;
     left:40%;
-    bottom:2em;
+    bottom:1em;
     padding: 6px 24px;
     border-radius: 10px;
     height:40px;
@@ -283,11 +327,12 @@ html{
     transition: padding 800ms;
  }
  #create-community-button:hover{
-    color:white;
-    background:linear-gradient(45deg,rgb(245, 6, 6),rgb(24, 24, 239));
-    cursor:pointer;
-    padding:6px 18px;
-    transition: padding 800ms,background-color 1000ms,color 600ms,box-shadow 100ms;
+  color:white;
+  background: rgb(244,98,69);
+background: linear-gradient(45deg, rgba(244,98,69,1) 7%, rgba(100,32,246,1) 100%);
+  cursor:pointer;
+  padding:6px 24px;
+  transition: padding 800ms,background-color 1000ms,color 600ms,box-shadow 100ms;
     box-shadow: 2px 2px 8px black;
  }
 #community-name
@@ -297,61 +342,73 @@ html{
     font-size: medium;
     border: 0px solid black;
     border-radius: 0.5em;
-    box-shadow: 0px 2px 5px black;
+    box-shadow: 0px 2px 5px #c0c2c6;
     margin-left: 1em;
     margin-top:1em;
 }
 #community-about
 {
  position:relative;
- margin-top:4em;
+ margin-top:1em;
  margin-left:1em;
  border-radius: 0.5em;
-    box-shadow: 0px 2px 5px black;
+ border: 0 solid black;
+    box-shadow: 0px 2px 5px #c0c2c6;
+}
+#community-about::placeholder
+{
+  position: absolute;
+  left:4.3em;
+  top:1em;
+  font-family: 'Poppins', sans-serif;
 }
 .home-h5-community
 {
   font-size: small;
-  color:white;
-  background-color: black ;
   width:50%;
   text-align: center;
   margin-top:2em;
   border-radius: 10px;
   margin-left:4.5em;
   padding: 4px;
-  box-shadow: 0px 2px 5px black;
 }
 #community-header
 {
-    background-color:white;
     border:2px solid black;
     height: 25vh;
     width: calc((97%) - 8px);
     position:absolute;
     left:1.5em;
     top:10em;
-    border-radius: 10px;
-    display: flex;
+    border-radius: 15px;
     z-index: 0;
     justify-content: center;
-    box-shadow: 1px 1px 5px black;
-    background-color: #8B9DE5;
+    background-color:white;
+}
+#community-online-numbers
+{
+  position: absolute;
+  bottom: 2em;
+  width: 20%;
+  height: 20%;
+  right: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 #community-banner
 {
-    background-color:white;
+  background: white;
     border:2px solid black;
     height: 25vh;
     width: calc((97%) - 8px);
     position:absolute;
     left:1.5em;
     top:5em;
-    border-radius: 10px;
+    border-radius: 4px;
     display: flex;
     justify-content: center;
     z-index: 1;
-    box-shadow: 1px 1px 5px black;
 }
 #community-readme
 {
@@ -359,7 +416,7 @@ html{
   background-color: white;
   border:2px solid black;
   width:65vh;
-  height:90vh;
+  height:50vh;
   position:absolute;
   left:53.5em;
   top: 23em;
@@ -369,10 +426,9 @@ html{
 #nav-profile
 {
   z-index:5 ;
-  color:white;
   position:absolute;
-  left:68em;
-  top:2.2em;
+  right:5em;
+  top:1.5em;
 }
 #nav-profile:hover{
   cursor: pointer;
@@ -382,7 +438,7 @@ details > summary {
 }
 #nav-drop-down
 {
-  background:transparent;
+  background-color: white;
   border:2px solid black;
   width:25vh;
   height:30vh;
@@ -399,13 +455,12 @@ details summary::-webkit-details-marker {
 {
   position: absolute;
   bottom:0.5em;
-  left:25%;
+  left:13%;
   padding: 3px 12px;
 }
 #community-page-about
 {
   color:white;
-  background-color: black ;
   width:50%;
   height: 15px!important;
   text-align: center;
@@ -413,17 +468,23 @@ details summary::-webkit-details-marker {
   border-radius: 10px;
   margin-left:5.5em;
   padding: 4px !important;
-  box-shadow: 0px 2px 5px black;
 }
 #community-page-about-div
 {
+  word-break: break-word;
   display: flex;
+  text-align: center;
   flex-wrap: wrap;
-  border-bottom:2px solid black;
+  border-bottom:0.5px solid #d2d2d2;
   width:90%;
   margin-top: 1em;
   margin-left:1em;
-  height: 40%;
+  height:auto;
+}
+#community-description
+{
+  margin-top: 1em;
+  margin-bottom:1em;
 }
 #readme-date
 {
@@ -431,46 +492,57 @@ details summary::-webkit-details-marker {
 }
 #home-search
 {
-  border:2px solid black;
+  border:0.2px solid black;
   position: absolute;
-  top:9em;
-  left:34%;
-  padding: 18px 100px;
+  top:0.6em;
+  left:15%;
+  padding: 8px 60px;
   align-items: center;
   display: flex;
-  background: transparent;
+  background-color:#e9eaec;
   z-index:0;
   border-radius: 60px;
   outline: none;
   font-size: medium;
   font-weight: bold;
   color: black;
-  box-shadow: 0px 2px 5px black;
 }
 ::placeholder{
   color: black;
 }
-#search-container
-{
-  text-align:left;
-}
 #search-icon
 {
-  border:1px solid black;
   padding:2px;
-  border-radius: 50%;
   position:absolute;
-  top:6.6em;
-  left:36.5%;
-  box-shadow: 0px 2px 5px black;
+  top:0.6em;
+  left:17.5%;
 }
 #community-header-name
 {
   position: absolute;
-  bottom:2em;
-  left:11em;
-  font-size:larger;
+  bottom:1em;
+  left:6.5em;
+  font-size:xx-large;
   font-weight: bold;
+}
+#community-inclusive-status
+{
+  position: relative;
+  font-weight: 600;
+  color: white;
+  background: rgb(244,98,69);
+background: linear-gradient(45deg, rgba(244,98,69,1) 7%, rgba(100,32,246,1) 100%);
+  left:28em;
+  top:6.7em;
+  padding: 6px 18px;
+  border-radius: 50px;
+}
+#community-inclusive-status:hover
+{
+ cursor: pointer;
+ color: black;
+ background: white;
+ box-shadow: 0 0 5px black;
 }
 #community-profile
 {
@@ -486,19 +558,18 @@ details summary::-webkit-details-marker {
 }
 #readme-moderators-div
 {
-  border-top: 2px solid black;
+  border-top: 0.5px solid #d2d2d2;
   display: flex;
   flex-wrap: wrap;
   width:90%;
   position: absolute;
   left:1em;
   margin-top: 1em;
-  height: 18vh;
+  height: 20vh;
 }
 #readme-moderators
 {
   color:white;
-  background-color: black ;
   width:50%;
   height: 15px!important;
   text-align: center;
@@ -506,7 +577,6 @@ details summary::-webkit-details-marker {
   border-radius: 10px;
   margin-left:5.5em;
   padding: 4px !important;
-  box-shadow: 0px 2px 5px black;
 }
 #create-a-post
 {

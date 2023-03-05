@@ -1,0 +1,23 @@
+<nav id="header">
+    <% if(!currentUser){ %>
+        <a href="/login"><button class="login">Login</button></a> 
+        <% }else {%>
+            <details>
+                <summary id="nav-profile" class="gradient-font"><%=currentUser.username %></summary>
+                <details-menu role="menu">
+                 <div id="nav-drop-down">
+                    <a href="/logout"><button class="login" id="logout">Logout</button></a>
+                 </div>
+                </details-menu>
+              </details>
+             <% } %>
+    <a href="/"><h1 class="gradient-font">Record</h1></a>
+    <div id="search-container">
+        <form action="/" method="get">
+            <input type="text" name="search" placeholder="Search" id="home-search">
+            <span class="material-symbols-outlined" id="search-icon">
+                search
+                </span>
+          </form>
+       </div>
+</nav>

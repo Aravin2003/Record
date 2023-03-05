@@ -3,21 +3,22 @@
 <link rel="stylesheet"  href="css/home.css">
 </head>
 <body>
-    <nav id="header">
-        <% if(!currentUser){ %>
-            <a href="/login"><button class="login">Login</button></a> 
-            <% }else {%>
-                <details>
-                    <summary id="nav-profile"><%=currentUser.username %></summary>
-                    <details-menu role="menu">
-                     <div id="nav-drop-down">
-                        <a href="/logout"><button class="login" id="logout">Logout</button></a>
-                     </div>
-                    </details-menu>
-                  </details>
-                 <% } %>
-        <a href="/"><h1><span class="websitenamefirstletter">R</span>ecord</h1></a>
-    </nav>
+    <%-include("partials/nav")%>
+    <div id="your-space">
+        <a href="communityCreate"> <button id="community-create"><span class="material-symbols-outlined" id="add-community">
+            add
+            </span>Create Community</button></a>
+            <a href="communityCreate"> <button id="post-create"><span class="material-symbols-outlined" id="add-community">
+                add
+                </span>Create Post</button></a>
+            <div id="your-space-explain-div">
+                <p id="your-space-name" class="gradient-font">Your Space</p>
+                <p id="your-space-explain">Welcome to Your Space, the place thats truly you. Get personalized 
+                    recommendations tailored just for you, based on your interests and preferences. 
+                    With Your Space, you'll feel at home as you explore a world of content 
+                    that's uniquely yours.</p>
+            </div>
+    </div>
     <%if(success&&success.length){%>
         <div id="success-flash">
            <% if(currentUser){ %>
@@ -30,23 +31,12 @@
            </span>
         </div>
         <%}%>
-       <div id="search-container">
-        <form action="/" method="get">
-            <input type="text" name="search" placeholder="Search..." id="home-search">
-            <span class="material-symbols-outlined" id="search-icon">
-                search
-                </span>
-          </form>
-       </div>
-       <a href="communityCreate"> <button id="community-create"><span class="material-symbols-outlined" id="add-community">
-        add
-        </span>Create Community</button></a>
      <div id="community-container">
         <div id="user-communities">
-            <h5 class="home-h5-community">Your communities</h5>
+            <h5 class="home-h5-community gradient-font">Your communities</h5>
         </div>
         <div id="user-recently-viewed">
-            <h5 class="home-h5-community">Recently viewed</h5>
+            <h5 class="home-h5-community gradient-font">Recently viewed</h5>
         </div>
      </div>
      <div id="post-container">

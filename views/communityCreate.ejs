@@ -1,29 +1,15 @@
 <%-include("partials/head")%>
 <title>Record</title>
 <link rel="stylesheet"  href="css/home.css">
+<link rel="stylesheet"  href="css/bodyGradient.css">
 </head>
 <body>
-    <nav id="header">
-        <% if(!currentUser){ %>
-            <a href="/login"><button class="login">Login</button></a> 
-            <% }else {%>
-                <details>
-                    <summary id="nav-profile"><%=currentUser.username %></summary>
-                    <details-menu role="menu">
-                     <div id="nav-drop-down">
-                        <a href="/logout"><button class="login" id="logout">Logout</button></a>
-                     </div>
-                    </details-menu>
-                  </details>
-                 <% } %>
-                 <a href="/"><h1><span class="websitenamefirstletter">R</span>ecord</h1></a>
-    </nav>
+    <%-include("partials/nav")%>
     <div id="community-create-details">
     <form action="/communityCreate" method="post">
-        <h2 class="h2-community">Name</h2>
         <input type="text" id="community-name" placeholder="Name" name="communityName" maxlength="21" required>
-    <h2 class="h2-community" id="create-about-community">About</h2>
-    <textarea id="community-about" name="communityDescription" rows="8" cols="50"></textarea>
+        <textarea id="community-about" name="communityDescription" placeholder="Add Description"rows="8" cols="50"></textarea>
+        <div id="community-visibility-holder"></div>
     <button id="create-community-button">Create</button>
     </form>
     </div>
